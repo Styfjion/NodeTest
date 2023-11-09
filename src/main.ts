@@ -1,7 +1,11 @@
-export async function run() {
-  console.log('hello, world')
+export async function run(): Promise<void> {
+    console.log('hello, world')
 }
 
-run()
-  .then(() => console.log('process end'))
-  .catch(error => console.error(`${error}`))
+try {
+    run().then(() => {
+        console.log('process end')
+    })
+} catch (error) {
+    console.error(error)
+}
